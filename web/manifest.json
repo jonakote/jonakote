@@ -1,0 +1,9 @@
+{
+  "name": "Jonakote Portfolio",
+  "short_name": "Jonakote",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0B0D0D",
+  "theme_color": "#0B0D0D",
+  "description": "A portfolio of useful digital experiences, thoughtful interfaces, and Flutter web work."
+}
