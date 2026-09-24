@@ -21,7 +21,14 @@ class ContactSection extends StatelessWidget {
               const SizedBox(height: 32),
               const Text('Find me on GitHub and let’s start there.', style: TextStyle(color: AppColors.muted, fontSize: 16)),
               const SizedBox(height: 30),
-              PillButton(label: 'github.com/jonakote ↗', onPressed: () => _openGitHub(context)),
+              Wrap(
+                spacing: 12,
+                runSpacing: 12,
+                children: [
+                  PillButton(label: 'GitHub ↗', onPressed: () => _openExternalUrl(context, SocialLinks.github)),
+                  PillButton(label: 'LinkedIn ↗', filled: false, onPressed: () => _openExternalUrl(context, SocialLinks.linkedin)),
+                ],
+              ),
             ],
           ),
         ),
@@ -29,7 +36,10 @@ class ContactSection extends StatelessWidget {
     );
   }
 
-  void _openGitHub(BuildContext context) {
-    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Visit github.com/jonakote to connect.')));
+  Future<void> _openExternalUrl(BuildContext context, String url) async {
+    final didLaunch = await launchUrl(Uri.parse(url), webOnlyWindowName: '_blank');
+    if (!didLaunch && context.mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Could not open $url')));
+    }
   }
 }

@@ -1,4 +1,4 @@
-# Jonakote — personal portfolio
+# Joshua Tetteh — personal portfolio
 
 > Digital things with intent.
 
@@ -69,8 +69,8 @@ The portfolio uses a restrained palette, generous spacing, and two complementary
 
 ## About
 
-This is the online home of [@jonakote](https://github.com/jonakote). The site is intentionally easy to evolve as new work, experiments, and collaborations take shape.
+This is the online home of [Joshua Tetteh](https://github.com/jonakote). The site is intentionally easy to evolve as new work, experiments, and collaborations take shape, with a focus on Flutter and Dart.
 
 ## License
 
-The source is available for reference. Portfolio content, identity, and copy belong to Jonakote.
+The source is available for reference. Portfolio content, identity, and copy belong to Joshua Tetteh.

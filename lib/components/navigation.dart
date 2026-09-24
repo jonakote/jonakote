@@ -58,7 +58,7 @@ class BrandMark extends StatelessWidget {
         ),
         const SizedBox(width: 10),
         const Text(
-          'jonakote',
+          'Joshua Tetteh',
           style: TextStyle(fontSize: 15, fontWeight: FontWeight.w800, letterSpacing: -0.3),
         ),
       ],

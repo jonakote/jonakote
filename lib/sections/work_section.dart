@@ -16,7 +16,7 @@ class WorkSection extends StatelessWidget {
           ProjectCard(
             compact: compact,
             index: '01',
-            title: 'Jonakote / Portfolio',
+            title: 'Joshua Tetteh / Portfolio',
             description: 'A focused home for work, ideas, and the next conversation — designed as a fast, expressive Flutter web experience.',
             tags: const ['Flutter Web', 'Responsive UI', 'SEO-ready'],
             accent: AppColors.lime,

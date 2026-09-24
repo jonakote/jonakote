@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 part 'theme/app_colors.dart';
+part 'theme/social_links.dart';
 part 'screens/portfolio_home.dart';
 part 'components/navigation.dart';
 part 'components/section_primitives.dart';
@@ -25,7 +27,7 @@ class JonakotePortfolio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Jonakote — Digital experiences, thoughtfully built',
+      title: 'Joshua Tetteh — Digital experiences, thoughtfully built',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.dark,

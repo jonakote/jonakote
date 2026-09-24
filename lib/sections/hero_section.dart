@@ -39,7 +39,7 @@ class HeroSection extends StatelessWidget {
               ConstrainedBox(
                 constraints: const BoxConstraints(maxWidth: 510),
                 child: const Text(
-                  'I’m Jonakote — a builder interested in the space where useful products, clear interfaces, and thoughtful code meet.',
+                  'I’m Joshua Tetteh — a builder interested in the space where useful products, clear interfaces, and thoughtful code meet.',
                   style: TextStyle(color: AppColors.muted, fontSize: 17, height: 1.65),
                 ),
               ),
@@ -48,7 +48,7 @@ class HeroSection extends StatelessWidget {
                 children: [
                   PillButton(label: 'Explore the work ↓', onPressed: onExplore),
                   const SizedBox(width: 22),
-                  const Text('Flutter · Web · Product thinking', style: TextStyle(color: AppColors.muted, fontSize: 12)),
+                  const Text('Flutter · Dart · Product thinking', style: TextStyle(color: AppColors.muted, fontSize: 12)),
                 ],
               ),
               const SizedBox(height: 92),
