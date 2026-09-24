@@ -112,3 +112,58 @@ class SignalVisual extends StatelessWidget {
     );
   }
 }
+
+class TydizenVisual extends StatelessWidget {
+  const TydizenVisual({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 24),
+      child: BarChart(
+        BarChartData(
+          maxY: 10,
+          minY: 0,
+          alignment: BarChartAlignment.spaceAround,
+          gridData: FlGridData(
+            show: true,
+            drawVerticalLine: false,
+            horizontalInterval: 2.5,
+            getDrawingHorizontalLine: (_) => FlLine(
+              color: AppColors.line.withValues(alpha: .7),
+              strokeWidth: 1,
+              dashArray: [4, 7],
+            ),
+          ),
+          titlesData: const FlTitlesData(show: false),
+          borderData: FlBorderData(show: false),
+          barTouchData: const BarTouchData(enabled: false),
+          barGroups: [
+            _bar(0, 4.2, AppColors.mint),
+            _bar(1, 6.8, AppColors.mint),
+            _bar(2, 5.1, AppColors.lime),
+            _bar(3, 8.4, AppColors.lime),
+            _bar(4, 7.2, AppColors.mint),
+            _bar(5, 9.0, AppColors.lime),
+          ],
+        ),
+        duration: const Duration(milliseconds: 700),
+        curve: Curves.easeOutCubic,
+      ),
+    );
+  }
+
+  static BarChartGroupData _bar(int x, double value, Color color) {
+    return BarChartGroupData(
+      x: x,
+      barRods: [
+        BarChartRodData(
+          toY: value,
+          color: color,
+          width: 16,
+          borderRadius: BorderRadius.circular(7),
+        ),
+      ],
+    );
+  }
+}
