@@ -12,6 +12,14 @@ A small, fast portfolio built with **Flutter Web**. It is designed to be a clear
 - SEO metadata, Open Graph tags, JSON-LD, sitemap, and robots directives
 - No mobile targets or platform-specific code: web only
 
+## Featured work
+
+### [Tydizen](https://github.com/jonakote/tydizen_app)
+
+An environmental and waste-management platform pairing a Flutter/Dart app with a Django operations dashboard. The product supports community reports, service requests, analytics, and organization-scoped response workflows.
+
+The portfolio also includes an evolving notification proof of concept as an example of product exploration and interaction design.
+
 ## Run locally
 
 Make sure Flutter is installed, then run:
