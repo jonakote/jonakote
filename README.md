@@ -18,7 +18,6 @@ A small, fast portfolio built with **Flutter Web**. It is designed to be a clear
 
 An environmental and waste-management platform pairing a Flutter/Dart app with a Django operations dashboard. The product supports community reports, service requests, analytics, and organization-scoped response workflows.
 
-The portfolio also includes an evolving notification proof of concept as an example of product exploration and interaction design.
 
 ## Run locally
 

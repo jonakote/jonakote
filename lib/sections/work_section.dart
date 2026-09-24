@@ -36,18 +36,6 @@ class WorkSection extends StatelessWidget {
             linkLabel: 'View project ↗',
             linkUrl: SocialLinks.tydizenApp,
           ),
-          const SizedBox(height: 18),
-          ProjectCard(
-            compact: compact,
-            index: '03',
-            title: 'Notification POC',
-            description: 'An early product exploration helping move notification functionality from an idea toward a clear, testable experience.',
-            tags: const ['Proof of concept', 'Notification flow', 'In progress'],
-            accent: AppColors.coral,
-            visual: const SignalVisual(),
-            linkLabel: 'See more work ↗',
-            linkUrl: SocialLinks.github,
-          ),
         ],
       ),
     );
