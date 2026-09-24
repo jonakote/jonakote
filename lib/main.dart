@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fl_chart/fl_chart.dart';
 
 part 'theme/app_colors.dart';
 part 'screens/portfolio_home.dart';

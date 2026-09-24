@@ -65,7 +65,7 @@ nginx.conf                    # Static hosting and SPA fallback
 
 ## Design direction
 
-The portfolio uses a restrained palette, generous spacing, and two complementary typefaces: Manrope for interface copy and Space Grotesk for display moments. The goal is to make the work feel considered without adding visual noise.
+The portfolio uses a restrained palette, generous spacing, and two complementary typefaces: Manrope for interface copy and Space Grotesk for display moments. The project visuals use `fl_chart` for responsive radar and line/area charts, keeping the graphics interactive and web-friendly without adding visual noise.
 
 ## About
 
