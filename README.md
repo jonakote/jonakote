@@ -55,6 +55,7 @@ lib/screens/                  # Full-page screens
 lib/sections/                 # Hero, work, about, contact, and principles
 lib/components/               # Reusable navigation, cards, visuals, and primitives
 lib/theme/                    # Shared color tokens
+assets/brand/chatgpt.png      # Footer ChatGPT mark
 web/index.html                # SEO, social metadata, fonts, and structured data
 web/manifest.json             # Web app metadata
 web/robots.txt                # Crawler instructions

@@ -57,40 +57,14 @@ class ChatGptMark extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Tooltip(
       message: 'ChatGPT icon',
-      child: CustomPaint(size: Size(16, 16), painter: ChatGptMarkPainter()),
+      child: Image(
+        image: AssetImage('assets/brand/chatgpt.png'),
+        width: 16,
+        height: 16,
+        fit: BoxFit.contain,
+        color: AppColors.mint,
+        colorBlendMode: BlendMode.srcIn,
+      ),
     );
   }
-}
-
-class ChatGptMarkPainter extends CustomPainter {
-  const ChatGptMarkPainter();
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final center = Offset(size.width / 2, size.height / 2);
-    final knot = Paint()
-      ..color = AppColors.lime
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 1.35
-      ..strokeCap = StrokeCap.round
-      ..strokeJoin = StrokeJoin.round;
-
-    // Six overlapping curved petals create a compact OpenAI/ChatGPT knot mark.
-    for (var index = 0; index < 6; index++) {
-      canvas.save();
-      canvas.translate(center.dx, center.dy);
-      canvas.rotate(index * math.pi / 3);
-      final petal = Path()
-        ..moveTo(0, -1.5)
-        ..cubicTo(1.5, -5.6, 5.7, -5.8, 6.5, -2.0)
-        ..cubicTo(7.2, 1.2, 4.8, 4.2, 1.3, 4.7)
-        ..cubicTo(-1.5, 5.1, -3.0, 3.2, -2.6, 1.2);
-      canvas.drawPath(petal, knot);
-      canvas.restore();
-    }
-    canvas.drawCircle(center, 1.5, Paint()..color = AppColors.lime);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
