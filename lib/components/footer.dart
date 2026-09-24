@@ -42,7 +42,7 @@ class FooterCredit extends StatelessWidget {
         SizedBox(width: 5),
         Text('Flutter', style: TextStyle(color: AppColors.mint, fontSize: 11, fontWeight: FontWeight.w700)),
         SizedBox(width: 12),
-        CodexMark(),
+        ChatGptMark(),
         SizedBox(width: 5),
         Text('Codex', style: TextStyle(color: AppColors.mint, fontSize: 11, fontWeight: FontWeight.w700)),
       ],
@@ -50,29 +50,45 @@ class FooterCredit extends StatelessWidget {
   }
 }
 
-class CodexMark extends StatelessWidget {
-  const CodexMark({super.key});
+class ChatGptMark extends StatelessWidget {
+  const ChatGptMark({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const CustomPaint(size: Size(16, 16), painter: CodexMarkPainter());
+    return const Tooltip(
+      message: 'ChatGPT icon',
+      child: CustomPaint(size: Size(16, 16), painter: ChatGptMarkPainter()),
+    );
   }
 }
 
-class CodexMarkPainter extends CustomPainter {
-  const CodexMarkPainter();
+class ChatGptMarkPainter extends CustomPainter {
+  const ChatGptMarkPainter();
 
   @override
   void paint(Canvas canvas, Size size) {
     final center = Offset(size.width / 2, size.height / 2);
-    final ray = Paint()
+    final knot = Paint()
       ..color = AppColors.lime
-      ..strokeWidth = 1.5
-      ..strokeCap = StrokeCap.round;
-    for (final direction in const [Offset(0, -1), Offset(1, 0), Offset(0, 1), Offset(-1, 0)]) {
-      canvas.drawLine(center + direction * 2.5, center + direction * 7, ray);
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 1.35
+      ..strokeCap = StrokeCap.round
+      ..strokeJoin = StrokeJoin.round;
+
+    // Six overlapping curved petals create a compact OpenAI/ChatGPT knot mark.
+    for (var index = 0; index < 6; index++) {
+      canvas.save();
+      canvas.translate(center.dx, center.dy);
+      canvas.rotate(index * math.pi / 3);
+      final petal = Path()
+        ..moveTo(0, -1.5)
+        ..cubicTo(1.5, -5.6, 5.7, -5.8, 6.5, -2.0)
+        ..cubicTo(7.2, 1.2, 4.8, 4.2, 1.3, 4.7)
+        ..cubicTo(-1.5, 5.1, -3.0, 3.2, -2.6, 1.2);
+      canvas.drawPath(petal, knot);
+      canvas.restore();
     }
-    canvas.drawCircle(center, 2.5, Paint()..color = AppColors.lime);
+    canvas.drawCircle(center, 1.5, Paint()..color = AppColors.lime);
   }
 
   @override
