@@ -22,3 +22,28 @@ flutter:
   uses-material-design: true
   assets:
     - assets/brand/chatgpt.png
+  # Bundled rather than loaded from the Google Fonts stylesheet: the web
+  # renderer only draws with fonts it owns, so CSS-only families silently fell
+  # back to Roboto. These are static instances cut from the official variable
+  # fonts (OFL).
+  fonts:
+    - family: Manrope
+      fonts:
+        - asset: assets/fonts/Manrope-400.ttf
+          weight: 400
+        - asset: assets/fonts/Manrope-500.ttf
+          weight: 500
+        - asset: assets/fonts/Manrope-600.ttf
+          weight: 600
+        - asset: assets/fonts/Manrope-700.ttf
+          weight: 700
+        - asset: assets/fonts/Manrope-800.ttf
+          weight: 800
+    - family: Space Grotesk
+      fonts:
+        - asset: assets/fonts/SpaceGrotesk-500.ttf
+          weight: 500
+        - asset: assets/fonts/SpaceGrotesk-600.ttf
+          weight: 600
+        - asset: assets/fonts/SpaceGrotesk-700.ttf
+          weight: 700

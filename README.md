@@ -73,7 +73,21 @@ nginx.conf                    # Static hosting and SPA fallback
 
 ## Design direction
 
-The portfolio uses a restrained palette, generous spacing, and two complementary typefaces: Manrope for interface copy and Space Grotesk for display moments. The project visuals use `fl_chart` for responsive radar and line/area charts, keeping the graphics interactive and web-friendly without adding visual noise.
+The portfolio uses a restrained palette, generous spacing, and two complementary typefaces: Manrope for interface copy and Space Grotesk for display moments. Both are **bundled as assets** (`assets/fonts`, static instances cut from the official variable fonts, OFL licences included) rather than pulled from the Google Fonts stylesheet — the web renderer only draws with fonts it owns, so a CSS-only family silently falls back to Roboto.
+
+The project visuals use `fl_chart` for responsive radar and bar charts, keeping the graphics interactive and web-friendly without adding visual noise.
+
+### Motion
+
+Motion is a system, not decoration. Tokens live in `AppMotion`; the reusable pieces live in `lib/components/motion.dart`:
+
+- `Reveal` / `RevealGroup` — fade-and-lift as a section scrolls into view, once, with optional stagger.
+- `HoverBuilder` — the single hover/focus primitive behind every interactive element.
+- `PulseDot`, `Marquee`, `ScrollCue`, `HeartBeat` — the small always-on signs of life.
+- `AuroraBackdrop` — slow-drifting accent glows, a faint grid, and a vignette behind the whole page.
+- `PointerSpotlight` — a soft light tracking the cursor across the hero.
+
+Everything above checks `MediaQuery.disableAnimations` and renders its resting state when the visitor has asked for reduced motion.
 
 ## About
 

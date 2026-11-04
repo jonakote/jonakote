@@ -1,5 +1,6 @@
 part of '../main.dart';
 
+/// Three operating principles on a banded surface, revealed left to right.
 class PrinciplesSection extends StatelessWidget {
   const PrinciplesSection({required this.compact, super.key});
 
@@ -7,23 +8,39 @@ class PrinciplesSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: AppColors.surface,
-      child: Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 1180),
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: compact ? 22 : 34, vertical: 58),
-            child: Wrap(
-              spacing: compact ? 30 : 70,
-              runSpacing: 30,
-              children: const [
-                Principle(number: '01', title: 'Clarity first', copy: 'Simple ideas deserve simple interfaces.'),
-                Principle(number: '02', title: 'Built to last', copy: 'Small details, solid foundations, no noise.'),
-                Principle(number: '03', title: 'Always curious', copy: 'The best work starts with better questions.'),
-              ],
-            ),
-          ),
+    const principles = [
+      ('01', 'Clarity first', 'Simple ideas deserve simple interfaces.'),
+      ('02', 'Built to last', 'Small details, solid foundations, no noise.'),
+      ('03', 'Always curious', 'The best work starts with better questions.'),
+    ];
+
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        color: AppColors.surface.withValues(alpha: 0.72),
+        border: const Border(
+          top: BorderSide(color: AppColors.line),
+          bottom: BorderSide(color: AppColors.line),
+        ),
+      ),
+      child: ContentShell(
+        padding: EdgeInsets.symmetric(
+          horizontal: AppMetrics.gutter(compact),
+          vertical: compact ? 48 : 62,
+        ),
+        child: Wrap(
+          spacing: compact ? 30 : 64,
+          runSpacing: 34,
+          children: [
+            for (var i = 0; i < principles.length; i++)
+              Reveal(
+                delay: Duration(milliseconds: 110 * i),
+                child: Principle(
+                  number: principles[i].$1,
+                  title: principles[i].$2,
+                  copy: principles[i].$3,
+                ),
+              ),
+          ],
         ),
       ),
     );
