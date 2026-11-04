@@ -41,6 +41,23 @@ Future<void> openExternalUrl(BuildContext context, String url) async {
   }
 }
 
+/// Opens the visitor's mail client. Uses `_self` rather than `_blank`: the
+/// browser hands a `mailto:` off to the mail handler without navigating, so
+/// `_blank` would just leave an empty tab behind.
+Future<void> openMailto(BuildContext context, String url) async {
+  final messenger = ScaffoldMessenger.maybeOf(context);
+  final opened = await launchUrl(Uri.parse(url), webOnlyWindowName: '_self');
+  if (!opened) {
+    messenger?.showSnackBar(
+      const SnackBar(
+        content: Text('Could not open your mail app — '
+            '${SocialLinks.email}'),
+        backgroundColor: AppColors.surfaceRaised,
+      ),
+    );
+  }
+}
+
 class JonakotePortfolio extends StatelessWidget {
   const JonakotePortfolio({super.key});
 

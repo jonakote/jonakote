@@ -14,7 +14,7 @@ A small, fast portfolio built with **Flutter Web**. It is designed to be a clear
 
 ## Featured work
 
-### [Tydizen](https://github.com/jonakote/tydizen_app)
+### [Tydizen](https://tydizen.com)
 
 An environmental and waste-management platform pairing a Flutter/Dart app with a Django operations dashboard. The product supports community reports, service requests, analytics, and organization-scoped response workflows.
 

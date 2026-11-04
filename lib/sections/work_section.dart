@@ -44,7 +44,7 @@ class WorkSection extends StatelessWidget {
               accent: AppColors.mint,
               visual: const TydizenVisual(),
               linkLabel: 'View project',
-              linkUrl: SocialLinks.tydizenApp,
+              linkUrl: SocialLinks.tydizen,
             ),
           ),
         ],

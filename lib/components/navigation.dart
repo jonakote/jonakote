@@ -69,7 +69,8 @@ class PortfolioNavBar extends StatelessWidget {
                       label: 'Let’s talk',
                       trailing: '↗',
                       filled: false,
-                      onPressed: () => onNavigate('contact'),
+                      onPressed: () =>
+                          openMailto(context, SocialLinks.enquiryMailto),
                     ),
                   ] else
                     MenuToggle(open: menuOpen, onPressed: onToggleMenu),
